@@ -628,11 +628,13 @@ MouseArea {
         const minutes = match[3]
         const seconds = "ss";
         const amPm = "AP";
+        let amPmDelimiter = " ";
         const uses24hFormatByDefault = timeFormatString.toLowerCase().indexOf("ap") === -1;
 
         if (Plasmoid.formFactor === PlasmaCore.Types.Vertical
             && main.splitIfVertical === true) {
-            delimiter = "\n"
+            delimiter = "\n";
+            amPmDelimiter = "\n";
         }
 
         // because QLocale is incredibly stupid and does not convert 12h/24h clock format
@@ -643,8 +645,8 @@ MouseArea {
 
         // add "AM/PM" either if the setting is the default and locale uses it OR if the user unchecked "use 24h format"
         if ((main.use24hFormat == Qt.PartiallyChecked && !uses24hFormatByDefault) || main.use24hFormat == Qt.Unchecked) {
-            result += " " + amPm;
-            result_sec += " " + amPm;
+            result += amPmDelimiter + amPm;
+            result_sec += amPmDelimiter + amPm;
         }
 
         main.timeFormat = result;
