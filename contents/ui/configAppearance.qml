@@ -142,12 +142,6 @@ SimpleKCM {
         }
 
 
-        QQC2.CheckBox {
-                id: splitIfVertical
-                text: i18n("Split text if vertical")
-                enabled: !showDate.checked
-        }
-
         Item {
             Kirigami.FormData.isSection: true
         }
@@ -235,11 +229,18 @@ SimpleKCM {
             buttons: [autoFontAndSizeRadioButton, manualFontAndSizeRadioButton]
         }
 
+        QQC2.CheckBox {
+                Kirigami.FormData.label: i18nc("@label:group", "Text display:")
+                id: splitIfVertical
+                text: i18n("Split text if vertical")
+                enabled: !showDate.checked
+        }
+
         QQC2.RadioButton {
-            Kirigami.FormData.label: i18nc("@label:group", "Text display:")
             id: autoFontAndSizeRadioButton
             text: i18nc("@option:radio", "Automatic")
         }
+
 
         QQC2.Label {
             text: i18nc("@label", "Text will follow the system font and expand to fill the available space.")
