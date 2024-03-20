@@ -25,7 +25,7 @@
     </entry>
     <entry name="showDate" type="Bool">
       <label>Whether the date should be shown next to the clock.</label>
-      <default>true</default>
+      <default>false</default>
     </entry>
     <entry name="dateFormat" type="string">
       <label>The date format to display. Options are: shortDate, longDate, isoDate or custom.</label>
@@ -93,7 +93,7 @@
     </entry>
     <entry name="use24hFormat" type="UInt">
       <label>Force the clock to use 12/24 hour time, instead of following the user locale.</label>
-      <default>1</default>
+      <default>2</default>
     </entry>
     <entry name="firstDayOfWeek" type="Int">
       <label>Force the calendar to use a specific week day as first day of a week. -1 means follow user locale, 0 is Sunday, 1 is Monday, etc.</label>
